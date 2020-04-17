@@ -12,6 +12,7 @@
                 @foreach($tweets as $tweet)
                     @include('_tweet')
                 @endforeach
+
             </div>
         </div>
         <div class="lg:w-1/6">
