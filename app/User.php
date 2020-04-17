@@ -41,4 +41,9 @@ class User extends Authenticatable
     {
         return "https://i.pravatar.cc/40?u=" . $this->email;
     }
+
+    public function timeline()
+    {
+        return Tweet::where('user_id', $this->id)->latest()->get();
+    }
 }
