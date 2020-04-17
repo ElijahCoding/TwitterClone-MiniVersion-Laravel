@@ -9,7 +9,7 @@
             @include ('_publish-tweet-panel')
 
             <div class="border border-gray-300 rounded-lg">
-
+                @include('_tweet')
             </div>
         </div>
         <div class="lg:w-1/6">
