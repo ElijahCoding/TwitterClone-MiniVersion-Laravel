@@ -6,7 +6,11 @@
             @include('_sidebar-links')
         </div>
         <div class="lg:flex-1 lg:mx-10 lg:mb-10" style="max-width: 700px">
-            2
+            @include ('_publish-tweet-panel')
+
+            <div class="border border-gray-300 rounded-lg">
+
+            </div>
         </div>
         <div class="lg:w-1/6">
             @include ('_friends-list')
