@@ -1,6 +1,4 @@
-@extends('layouts.app')
-
-@section('content')
+<x-master>
     <div class="container mx-auto flex justify-center">
         <x-panel>
             <x-slot name="heading">Login</x-slot>
@@ -27,7 +25,7 @@
                     >
 
                     @error('email')
-                    <p class="text-red-500 text-xs mt-2">{{ $message }}</p>
+                        <p class="text-red-500 text-xs mt-2">{{ $message }}</p>
                     @enderror
                 </div>
 
@@ -47,7 +45,7 @@
                     >
 
                     @error('password')
-                    <p class="text-red-500 text-xs mt-2">{{ $message }}</p>
+                        <p class="text-red-500 text-xs mt-2">{{ $message }}</p>
                     @enderror
                 </div>
 
@@ -68,7 +66,7 @@
                     </div>
 
                     @error('remember')
-                    <p class="text-red-500 text-xs mt-2">{{ $message }}</p>
+                        <p class="text-red-500 text-xs mt-2">{{ $message }}</p>
                     @enderror
                 </div>
 
@@ -85,4 +83,4 @@
             </form>
         </x-panel>
     </div>
-@endsection
+</x-master>

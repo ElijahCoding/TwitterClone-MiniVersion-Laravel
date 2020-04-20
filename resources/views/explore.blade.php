@@ -1,13 +1,11 @@
-@extends('layouts.app')
-
-@section('content')
+<x-app>
     <div>
         @foreach ($users as $user)
             <a href="{{ $user->path() }}" class="flex items-center mb-5">
                 <img src="{{ $user->avatar }}"
-                     alt="{{ $user->username }}'s avatar"
-                     width="60"
-                     class="mr-4 rounded"
+                      alt="{{ $user->username }}'s avatar"
+                      width="60"
+                      class="mr-4 rounded"
                 >
 
                 <div>
@@ -18,4 +16,4 @@
 
         {{ $users->links() }}
     </div>
-@endsection
+</x-app>
