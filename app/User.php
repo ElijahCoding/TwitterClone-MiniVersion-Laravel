@@ -44,10 +44,10 @@ class User extends Authenticatable
 
     public function timeline()
     {
-        $ids = $this->follows->pluck('id');
-        $ids->push($this->id);
+        $friends = $this->follows->pluck('id');
+        $friends->push($this->id);
 
-        return Tweet::whereIn('user_id', $ids)->latest()->get();
+        return Tweet::whereIn('user_id', $friends)->orWhere('user_id', $this->id)->latest()->get();
     }
 
     public function tweets()
@@ -63,5 +63,10 @@ class User extends Authenticatable
     public function follows()
     {
         return $this->belongsToMany(User::class, 'follows', 'user_id', 'following_user_id');
+    }
+
+    public function getRouteKeyName()
+    {
+        return 'name';
     }
 }
