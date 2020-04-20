@@ -45,6 +45,8 @@ class ProfileController extends Controller
             ],
         ]);
 
+        $attributes['avatar'] = request('avatar')->store('avatars');
+
         $user->update($attributes);
 
         return redirect($user->path());
